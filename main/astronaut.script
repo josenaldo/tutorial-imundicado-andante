@@ -11,8 +11,12 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	if vmath.length_sqr(self.dir) > 1 then                   -- [1]
+		self.dir = vmath.normalize(self.dir)
+	end
+	local p = go.get_position()                              -- [2]
+	go.set_position(p + self.dir * speed * dt)               -- [3]
+	self.dir = vmath.vector3()
 end
 
 function on_message(self, message_id, message, sender)
