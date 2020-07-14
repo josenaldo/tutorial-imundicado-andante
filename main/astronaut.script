@@ -1,9 +1,9 @@
-local speed = 150 
+go.property ("speed", 300)
 
 function init(self)
 	msg.post(".", "acquire_input_focus")                      -- [2]
 	self.dir = vmath.vector3()
-	self.current_anim = nil
+	self.current_anim = nil	
 end
 
 function final(self)
@@ -16,7 +16,7 @@ function update(self, dt)
 		self.dir = vmath.normalize(self.dir)
 	end
 	local p = go.get_position()
-	go.set_position(p + self.dir * speed * dt)    
+	go.set_position(p + self.dir * self.speed * dt)
 
 	-- animate the astronaut
 
