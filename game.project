@@ -1,0 +1,14 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /builtins/render/default.renderc
+
+[script]
+shared_state = 1
+
+[project]
+title = Tutorial do Imundiçado Andante
+
+[display]
+width = 1280
+height = 768
+
